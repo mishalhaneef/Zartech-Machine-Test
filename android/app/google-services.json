@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "760873208536",
+    "project_id": "zartech-machine-test",
+    "storage_bucket": "zartech-machine-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760873208536:android:730b83b7100e3d60aca5ad",
+        "android_client_info": {
+          "package_name": "com.example.zartech_machie_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760873208536-lqevqor7ged3u54jiae652vkvuv5goul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4JJiKPtGexDxnRTUYcNb19a_o57uHlC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760873208536-lqevqor7ged3u54jiae652vkvuv5goul.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "760873208536-29c21i1hl85p75ig5q1qg9pr5t3s0jgq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zartechMachieTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
