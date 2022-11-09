@@ -11,8 +11,6 @@ class DishNetwork implements BaseApiServices {
   Future<DishModel> getDishDatas() async {
     try {
       dynamic response = await _apiService.getApiResponse(ApiEndPoint.apiKey);
-      log(response);
-
       return response = DishModel.fromJson(response);
     } catch (e) {
       // rethrow means, it will call the throw statement without

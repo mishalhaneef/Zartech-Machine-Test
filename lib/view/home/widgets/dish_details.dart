@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zartech_machie_test/core/constants.dart';
-import 'package:zartech_machie_test/model/dish_model/category_dish.dart';
+import 'package:zartech_machie_test/model/dish_model/drink.dart';
 import 'package:zartech_machie_test/view_model/cart/cart.dart';
 
 class DishDetailsWidget extends StatelessWidget {
@@ -13,7 +15,7 @@ class DishDetailsWidget extends StatelessWidget {
     required this.i,
   }) : super(key: key);
 
-  final CategoryDish data;
+  final Drink data;
   final VoidCallback onAdd;
   final VoidCallback onRemove;
   final int i;
@@ -22,7 +24,7 @@ class DishDetailsWidget extends StatelessWidget {
     const height = SizedBox(height: 10);
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20),
-      height: data.addonCat != null ? 300 : 280,
+      height: data.strCategory == 'Ordinary Drink' ? 300 : 280,
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -30,7 +32,7 @@ class DishDetailsWidget extends StatelessWidget {
         children: [
           Expanded(
             child: SizedBox(
-              height: data.addonCat != null ? 300 : 280,
+              height: data.strCategory == 'Ordinary Drink' ? 300 : 280,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -38,7 +40,7 @@ class DishDetailsWidget extends StatelessWidget {
                 children: [
                   height,
                   Text(
-                    data.dishName!,
+                    data.strDrink!,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -49,14 +51,14 @@ class DishDetailsWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'INR ${data.dishPrice}',
+                        'INR ${data.idDrink!.substring(0, 2)}',
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '${data.dishCalories} Calories',
+                        '${data.strCategory}',
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -66,7 +68,7 @@ class DishDetailsWidget extends StatelessWidget {
                   ),
                   height,
                   Text(
-                    data.dishDescription!,
+                    data.strInstructions!,
                     style: const TextStyle(color: Colors.black54),
                   ),
                   height,
@@ -111,7 +113,7 @@ class DishDetailsWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (data.addonCat!.isNotEmpty)
+                  if (data.strCategory == 'Ordinary Drink')
                     const Text(
                       'Customizations available',
                       style: TextStyle(
@@ -130,11 +132,9 @@ class DishDetailsWidget extends StatelessWidget {
                 width: 80,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(
-                          'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8&w=1000&q=80',
-                        ))),
+                        image: NetworkImage(data.strDrinkThumb!))),
               ))
         ],
       ),

@@ -15,5 +15,6 @@ snackBar(context, text) {
 }
 
 class ApiEndPoint {
-  static const apiKey = 'https://www.mocky.io/v2/5dfccffc310000efc8d2c1ad';
+  static const apiKey =
+      'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=rum';
 }
