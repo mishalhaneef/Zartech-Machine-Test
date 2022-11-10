@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
       if (provider.isFetching) {
         return provider.loading();
       }
-      return provider.buildHome(provider, context);
+      return provider.buildHome(provider, context, user);
     });
   }
 }

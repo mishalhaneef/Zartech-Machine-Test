@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:zartech_machie_test/model/dish_model/dish_model.dart';
 import 'package:zartech_machie_test/repository/dish_repository.dart';
 import 'package:zartech_machie_test/view/home/widgets/appbar.dart';
 import 'package:zartech_machie_test/view/home/widgets/dish_details.dart';
+import 'package:zartech_machie_test/view/home/widgets/drawer.dart';
 import 'package:zartech_machie_test/view_model/cart/cart.dart';
 import 'package:zartech_machie_test/view_model/tabs.dart';
 
@@ -19,7 +21,6 @@ class DishProvider extends ChangeNotifier {
   Future<DishModel> getDishData() async {
     try {
       dishModel = await _dishApiService.getDishDatas();
-      log('dishmodel ${dishModel.drinks![0].idDrink}');
       isFetching = false;
       notifyListeners();
     } catch (e) {
@@ -32,7 +33,7 @@ class DishProvider extends ChangeNotifier {
 
   /// WIDGETS
 
-  Widget buildHome(DishProvider provider, context) {
+  Widget buildHome(DishProvider provider, context, user) {
     List<Tab> tabs = <Tab>[];
     final cartProvider = Provider.of<CartProvider>(context, listen: false);
     tabsGenerator(tabs, context, provider);
@@ -42,7 +43,7 @@ class DishProvider extends ChangeNotifier {
           appBar: PreferredSize(
               preferredSize: const Size.fromHeight(110),
               child: AppBarWidget(tabs: tabs)),
-          // drawer: DrawerWidgets(user: user!),
+          drawer: DrawerWidgets(user: user!),
           body: TabBarView(
               children:
                   List.generate(provider.dishModel.drinks!.length, (index) {
@@ -61,10 +62,17 @@ class DishProvider extends ChangeNotifier {
                         i: i,
                         data: data,
                         onAdd: () {
-                          cartProvider.increment(i);
+                          cartProvider.increment(i, dishModel.drinks!);
                         },
                         onRemove: () {
-                          cartProvider.decrement(i);
+                          cartProvider.decrement(i, dishModel.drinks!);
+                          Fluttertoast.showToast(
+                            msg: "Remove from cart",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            fontSize: 16.0,
+                          );
                         },
                       );
                     },

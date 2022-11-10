@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import 'api/dish_provider.dart';
 
 tabsGenerator(List<Tab> tabs, context, DishProvider provider) {

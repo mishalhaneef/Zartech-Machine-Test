@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zartech_machie_test/core/constants.dart';
+import 'package:zartech_machie_test/view/checkout/check_out_screen.dart';
 import 'package:zartech_machie_test/view_model/cart/cart.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -17,7 +18,13 @@ class AppBarWidget extends StatelessWidget {
     return AppBar(
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CheckOutScreen(),
+                ));
+          },
           icon: Badge(
             badgeColor: blueColor,
             badgeContent: Consumer<CartProvider>(
@@ -31,7 +38,7 @@ class AppBarWidget extends StatelessWidget {
               },
             ),
             child: const Icon(
-              Icons.shopping_bag,
+              Icons.shopping_cart,
               color: Colors.black54,
             ),
           ),

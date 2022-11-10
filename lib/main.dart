@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zartech_machie_test/firebase_options.dart';
-import 'package:zartech_machie_test/view/home/home.dart';
 import 'package:zartech_machie_test/view/root_screen/root.dart';
 import 'package:zartech_machie_test/view_model/api/dish_provider.dart';
 import 'package:zartech_machie_test/view_model/auth/google_sign_in.dart';
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Home(),
+        home: const RootScreen(),
       ),
     );
   }

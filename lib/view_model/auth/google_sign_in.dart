@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:zartech_machie_test/core/constants.dart';
 
@@ -27,7 +28,13 @@ class GoogleSignInProvider extends ChangeNotifier {
 
       notifyListeners();
     } catch (e) {
-      snackBar(context, 'Internet Error');
+      Fluttertoast.showToast(
+        msg: "Something went wrong",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        fontSize: 16.0,
+      );;
     }
   }
 
