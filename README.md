@@ -4,8 +4,11 @@
 
 :red_circle: Important Note
  ```
- I tried the API you gave on the document. But the API link has some problem .. Tried to fix that... But didn't work... The API link is working fine. I checked that in postman. But when I tried to call inside the code it didn't work... I provide that code also in the main channel of this repository. But that code will shows errors. You can check the code.
- So I found another API... I asked permission before that with the HR. Not the same as this with the category list and all. But I managed to implement that as you said.
+ I tried the API you gave on the document. But the API link has some problem . Tried to fix that... But didn't work.
+The API link is working fine. I checked that in postman. But when I tried to call inside the code it didn't work.
+I provide that code also in the main channel of this repository. But that code will shows errors. You can check the code.
+ So I found another API... I asked permission before that with the HR. Not the same as this with the category list and all. 
+ But I managed to implement that as you said.
  ```
 - working code is in ‘working-api’ channel.
 - Code with the api that you gave in the ‘main’ channel
