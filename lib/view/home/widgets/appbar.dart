@@ -16,6 +16,7 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(color: Colors.black),
       actions: [
         IconButton(
           onPressed: () {
