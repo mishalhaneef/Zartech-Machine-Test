@@ -10,7 +10,7 @@ class PhoneNumberVerification extends StatelessWidget {
     required this.provider,
   }) : super(key: key);
 
-  final PhoneAuthentication provider;
+  final PhoneAuthenticationProvider provider;
 
   @override
   Widget build(BuildContext context) {

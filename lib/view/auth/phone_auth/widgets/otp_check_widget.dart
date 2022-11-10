@@ -24,7 +24,7 @@ class OtpChecking extends StatelessWidget {
           buttonName: 'Verify OTP',
           onTap: () {
             final provider =
-                Provider.of<PhoneAuthentication>(context, listen: false);
+                Provider.of<PhoneAuthenticationProvider>(context, listen: false);
             provider.verifyOTP(context, otpController.text);
           },
           color: Colors.green,

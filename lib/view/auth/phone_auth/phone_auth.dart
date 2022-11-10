@@ -13,13 +13,13 @@ class PhoneAuth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<PhoneAuthentication>(context, listen: false);
+    final provider = Provider.of<PhoneAuthenticationProvider>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
           backgroundColor: blueColor,
           title: const Text('OTP Authentication'),
         ),
-        body: Consumer<PhoneAuthentication>(
+        body: Consumer<PhoneAuthenticationProvider>(
           builder: (context, value, child) {
             if (provider.verificationID == '') {
               return PhoneNumberVerification(provider: provider);

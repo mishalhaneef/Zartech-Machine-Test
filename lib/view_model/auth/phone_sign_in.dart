@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:zartech_machie_test/view/home/home.dart';
 
-class PhoneAuthentication extends ChangeNotifier {
+class PhoneAuthenticationProvider extends ChangeNotifier {
   FirebaseAuth auth = FirebaseAuth.instance;
   String verificationID = '';
   User? user;

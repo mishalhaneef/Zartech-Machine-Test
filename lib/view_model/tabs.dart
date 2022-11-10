@@ -6,7 +6,7 @@ tabsGenerator(List<Tab> tabs, context, DishProvider provider) {
     tabs.add(
       Tab(
         child: Text(
-          provider.dishModel.drinks![i].idDrink!,
+          provider.dishModel.drinks![i].strCategory!,
         ),
       ),
     );

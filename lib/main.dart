@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           create: (context) => GoogleSignInProvider(),
         ),
         ChangeNotifierProvider(
-          create: (context) => PhoneAuthentication(),
+          create: (context) => PhoneAuthenticationProvider(),
         ),
         ChangeNotifierProvider(
           create: (context) => CartProvider(),

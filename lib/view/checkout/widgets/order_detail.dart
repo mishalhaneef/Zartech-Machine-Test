@@ -13,7 +13,7 @@ class OrderDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height - 300,
+      height: size.height - 400,
       width: size.width / 2 + 130,
       decoration: BoxDecoration(
           color: Colors.white,
